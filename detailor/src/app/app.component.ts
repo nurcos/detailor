@@ -30,8 +30,6 @@ export class AppComponent {
 
   getBrowser() {
     var ua = navigator.userAgent;
-    console.log(ua)
-    console.log(navigator)
 
     if(ua.indexOf("Opera")!=-1) {
       this.browser="Opera";
@@ -63,8 +61,8 @@ export class AppComponent {
   }
 
   getIP() {
-    this.http.get('http://www.geoplugin.net/json.gp').subscribe((res:any) => {
-      this.ip = res['geoplugin_request']
+    this.http.get('https://api64.ipify.org?format=json').subscribe((res:any) => {
+      this.ip = res['ip']
     })
   }
   
